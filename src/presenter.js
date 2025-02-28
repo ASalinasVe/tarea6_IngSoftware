@@ -1,5 +1,5 @@
 
-import {mostrarCantItems, mostrarPrecioItem} from "./mostrar";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto} from "./mostrar";
 
 const cant = document.querySelector("#cant-items");
 const precio = document.querySelector("#precio-item")
@@ -12,5 +12,5 @@ form.addEventListener("submit", (event) => {
   const cantItems = Number.parseInt(cant.value);
   const precioItem = Number.parseInt(precio.value);
 
-  div.innerHTML = "<p> Cantidad: " + mostrarCantItems(cantItems) +  " Precio: " +  mostrarPrecioItem(precioItem) + "</p>";
+  div.innerHTML = "<p> Precio Neto: " + mostrarPrecioNeto(cantItems, precioItem)  + "</p>";
 });
