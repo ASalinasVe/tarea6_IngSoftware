@@ -1,4 +1,4 @@
-import mostrarCantItems from "../mostrar.js";
+import mostrarCantItems from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {

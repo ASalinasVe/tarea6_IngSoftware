@@ -1,5 +1,5 @@
 function mostrarCantItems(cantItems) {
-    return 10;
+    return cantItems;
   }
 
-  export default mostrarCantItems;
+export default mostrarCantItems

@@ -1,5 +1,5 @@
 
-import { mostrarCantItems } from "./mostrar.js";
+import mostrarCantItems from "./mostrar";
 
 
 const cant = document.querySelector("#cant-items");
