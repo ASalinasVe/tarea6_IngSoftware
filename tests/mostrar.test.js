@@ -50,6 +50,7 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de CA", ()
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de AL", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Alabama", () => {
+        expect (calcularImpuesto(4.00,60)).toBe(2.4);
         expect(calcularPrecioTotalImpuesto(4.00,60)).toBe(62.4);
     });
 });
