@@ -1,3 +1,6 @@
+
+
+
 // Seleccionar estado y mostrar elección	
 // Seleccionar estado y mostrar el porcentaje de impuesto que tiene ese estado	
 // Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de CA	
@@ -6,9 +9,7 @@
 // Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de UT	
 
 
-
-
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado} from "../src/mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -31,5 +32,11 @@ describe ("Mostar el precio neto", () => {
 describe ("Mostrar el Estado seleccionado", () => {
     it("Deberia mostrar el estado, que se ingresa", () => {
         expect(mostrarEstadoSeleccionado("CA")).toBe("CA");
+    });
+});
+
+describe("Mostrar el porcentaje de impuesto que tiene del estado seleccionado", () => {
+    it("Deberia mostrar el porcentaje de impuesto que tiene el estado seleccionado", () => {
+        expect(mostrarImpuestoEstado("California")).toBe(8.25);
     });
 });

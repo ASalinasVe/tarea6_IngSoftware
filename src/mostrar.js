@@ -14,6 +14,24 @@ function mostrarEstadoSeleccionado(estado){
     return estado;
 }
 
-export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado};
+function mostrarImpuestoEstado(estado){
+    let impuesto = 0; 
+    if (estado == "California"){
+        impuesto = 8.25;
+    }else if (estado == "Alabama"){
+        impuesto = 4;
+    }else if (estado == "Nevana"){
+        impuesto = 8;
+    }else if(estado == "Utah"){
+        impuesto = 6.65;
+    }else if(estado == "Texas"){
+        impuesto = 6.25;
+    }
+
+    return impuesto;
+
+}
+
+export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado};
 
 
