@@ -5,14 +5,32 @@
   </head>
   <body>
     <h1>Totalizador de Ventas</h1>
+
     <form id="totalizar-form">
+
       <label for="cant-items">Ingresar cantidad de items: </label>
-      <input type="number" id="cant-items" /><br>
+      <input type="number" id="cant-items" />
+      <br>
       <label for="precio-item">Ingresar el precio del Item: </label>
-      <input type="number" id="precio-item"><br>
-      <input type="submit" value="Mostrar" id="mostrar-button"><br>
+      <input type="number" id="precio-item">
+      <br>
+      <div id="resultados-div"></div>
+      <br>
+      <label for="estados-select">Seleccione su estado: </label>
+        <select id="select-estados">
+          <option value="Utah">UT</option>
+          <option value="Nevana">NV</option>
+          <option value="Texas">TX</option>
+          <option value="Alabama">AL</option>
+          <option value="California">CA</option>
+        </select>
+      <div id="estado-seleccionado"></div>
+      <br>
+      <input type="submit" value="Mostrar" id="mostrar-button">
+
+
     </form>
-    <div id="resultados-div"></div>
+    
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

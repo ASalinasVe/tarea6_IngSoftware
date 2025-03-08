@@ -9,4 +9,11 @@ function mostrarPrecioItem(precioItem){
 function mostrarPrecioNeto(cantItems, precioItem){
     return cantItems*precioItem;
 }
-export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto};
+
+function mostrarEstadoSeleccionado(estado){
+    return estado;
+}
+
+export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado};
+
+
