@@ -36,7 +36,7 @@ describe ("Mostrar el Estado seleccionado", () => {
 
 describe("Mostrar el porcentaje de impuesto que tiene del estado seleccionado", () => {
     it("Deberia mostrar el porcentaje de impuesto que tiene el estado seleccionado", () => {
-        expect(mostrarImpuestoEstado("California")).toBe(8.25);
+        expect(mostrarImpuestoEstado("CA")).toBe(8.25);
     });
 
 });
