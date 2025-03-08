@@ -16,29 +16,22 @@ function mostrarEstadoSeleccionado(estado){
 
 function mostrarImpuestoEstado(estado){
     let impuesto = 0; 
-    if (estado == "California"){
-        impuesto = 8.25;
-    }else if (estado == "Alabama"){
-        impuesto = 4;
-    }else if (estado == "Nevana"){
-        impuesto = 8;
-    }else if(estado == "Utah"){
-        impuesto = 6.65;
-    }else if(estado == "Texas"){
-        impuesto = 6.25;
+    switch (estado) {
+        case "CA": impuesto = 8.25; break;
+        case "AL": impuesto = 4; break;
+        case "NV": impuesto = 8; break;
+        case "UT": impuesto = 6.65; break;
+        case "TX": impuesto = 6.25; break;
     }
-
     return impuesto;
-
 }
 
 function calcularImpuesto(impuesto, precioNeto) {
-    return precioNeto *(impuesto*0.01)
+    return precioNeto * (impuesto / 100);
 }
 
 function calcularPrecioTotalImpuesto(impuesto,precioNeto) {
-    let precioTotal = precioNeto + calcularImpuesto(impuesto,precioNeto);
-    return precioTotal;
+    return precioNeto + calcularImpuesto(impuesto,precioNeto);
 }
 
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuesto,calcularImpuesto};
