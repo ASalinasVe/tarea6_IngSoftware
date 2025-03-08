@@ -32,6 +32,10 @@ function mostrarImpuestoEstado(estado){
 
 }
 
-export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado};
+function calcularPrecioTotalImpuesto(impuesto,precioTotal) {
+    return precioTotal-((impuesto*0.01)*precioTotal);
+}
+
+export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuesto};
 
 

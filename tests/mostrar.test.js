@@ -9,7 +9,7 @@
 // Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de UT	
 
 
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado} from "../src/mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuesto} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -39,4 +39,13 @@ describe("Mostrar el porcentaje de impuesto que tiene del estado seleccionado", 
     it("Deberia mostrar el porcentaje de impuesto que tiene el estado seleccionado", () => {
         expect(mostrarImpuestoEstado("California")).toBe(8.25);
     });
+
 });
+
+describe("Calcular y Mostrar el precio total con el valor de impuesto de CA", () => {
+    it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de California", () => {
+        expect(calcularPrecioTotalImpuesto(8.25,60)).toBe(55.05);
+    });
+});
+
+
