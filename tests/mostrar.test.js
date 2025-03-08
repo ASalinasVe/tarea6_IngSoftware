@@ -1,6 +1,5 @@
 
 
-
 // Seleccionar estado y mostrar elección	
 // Seleccionar estado y mostrar el porcentaje de impuesto que tiene ese estado	
 // Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de CA	
@@ -48,4 +47,9 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de CA", ()
     });
 });
 
+describe("Calcular y Mostrar el precio total con el valor de impuesto de AL", () => {
+    it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Alabama", () => {
+        expect(calcularPrecioTotalImpuesto(4.00,60)).toBe(57.6);
+    });
+});
 
