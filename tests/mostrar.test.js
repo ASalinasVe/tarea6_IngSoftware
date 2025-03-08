@@ -8,7 +8,7 @@
 // Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de UT	
 
 
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuesto} from "../src/mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuesto, calcularImpuesto} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -43,25 +43,26 @@ describe("Mostrar el porcentaje de impuesto que tiene del estado seleccionado", 
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de CA", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de California", () => {
-        expect(calcularPrecioTotalImpuesto(8.25,60)).toBe(55.05);
+        expect (calcularImpuesto(8.25,60)).toBe(4.95);
+        expect(calcularPrecioTotalImpuesto(8.25,60)).toBe(64.95);
     });
 });
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de AL", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Alabama", () => {
-        expect(calcularPrecioTotalImpuesto(4.00,60)).toBe(57.6);
+        expect(calcularPrecioTotalImpuesto(4.00,60)).toBe(62.4);
     });
 });
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de NV", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Nevana", () => {
-        expect(calcularPrecioTotalImpuesto(8.00,60)).toBe(55.2);
+        expect(calcularPrecioTotalImpuesto(8.00,60)).toBe(64.8);
     });
 });
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de UT", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Utah", () => {
-        expect(calcularPrecioTotalImpuesto(6.65,60)).toBe(56.01);
+        expect(calcularPrecioTotalImpuesto(6.65,60)).toBe(63.99);
     });
 });
 

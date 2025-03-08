@@ -32,10 +32,15 @@ function mostrarImpuestoEstado(estado){
 
 }
 
-function calcularPrecioTotalImpuesto(impuesto,precioTotal) {
-    return precioTotal-((impuesto*0.01)*precioTotal);
+function calcularImpuesto(impuesto, precioNeto) {
+    return precioNeto *(impuesto*0.01)
 }
 
-export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuesto};
+function calcularPrecioTotalImpuesto(impuesto,precioNeto) {
+    let precioTotal = precioNeto + calcularImpuesto(impuesto,precioNeto);
+    return precioTotal;
+}
+
+export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuesto,calcularImpuesto};
 
 
