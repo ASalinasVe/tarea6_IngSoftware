@@ -53,3 +53,10 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de AL", ()
     });
 });
 
+describe("Calcular y Mostrar el precio total con el valor de impuesto de NV", () => {
+    it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Nevana", () => {
+        expect(calcularPrecioTotalImpuesto(8.00,60)).toBe(55.2);
+    });
+});
+
+
