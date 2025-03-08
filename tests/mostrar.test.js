@@ -59,4 +59,9 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de NV", ()
     });
 });
 
+describe("Calcular y Mostrar el precio total con el valor de impuesto de UT", () => {
+    it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Utah", () => {
+        expect(calcularPrecioTotalImpuesto(6.65,60)).toBe(56.01);
+    });
+});
 
