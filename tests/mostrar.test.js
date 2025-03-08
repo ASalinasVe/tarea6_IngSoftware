@@ -57,12 +57,14 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de AL", ()
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de NV", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Nevana", () => {
+        expect (calcularImpuesto(8.00,60)).toBe(4.8);
         expect(calcularPrecioTotalImpuesto(8.00,60)).toBe(64.8);
     });
 });
 
 describe("Calcular y Mostrar el precio total con el valor de impuesto de UT", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de Utah", () => {
+        expect (calcularImpuesto(6.65,60)).toBe(3.99);
         expect(calcularPrecioTotalImpuesto(6.65,60)).toBe(63.99);
     });
 });
