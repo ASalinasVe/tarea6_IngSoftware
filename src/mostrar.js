@@ -35,16 +35,20 @@ function calcularPrecioTotalImpuestoDescuento(impuesto,precioNeto,descuento) {
 }
 
 function calcularDescuentoDelPrecioNeto(precioNeto,items) {
-    
+
     let porcentaje = 0;
 
     if (items >= 1000 && items < 3000) {
         porcentaje = 3;
-    } else if (items >= 3000 && items < 5000) {
+    }else if (items >= 3000 && items < 7000) {
         porcentaje = 5;
+    }else if (items >= 7000 && items < 10000) {
+        porcentaje = 7;
     }
 
+
     let descuento = precioNeto * (porcentaje / 100);
+    descuento = Math.round(descuento);
     return descuento;
 }
 

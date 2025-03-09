@@ -100,5 +100,11 @@ describe("Mostrar el precio total con el porcentaje de descuento para igual o ma
     })
 })
 
+describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 7000 items comprados", () => {
+    it ("Deberia mostrar el precio total con el descuento correspondiente a 7000 items.", () => {
+        expect(calcularDescuentoDelPrecioNeto(140000,7000)).toBe(9800);
+    })
+})
+
 
 
