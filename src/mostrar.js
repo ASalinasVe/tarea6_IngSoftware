@@ -45,6 +45,10 @@ function calcularDescuentoDelPrecioNeto(precioNeto,items) {
     }else if (items >= 7000 && items < 10000) {
         porcentaje = 7;
     }
+    else if (items >= 10000 && items < 30000) {
+        porcentaje = 10;
+    }
+
 
 
     let descuento = precioNeto * (porcentaje / 100);
