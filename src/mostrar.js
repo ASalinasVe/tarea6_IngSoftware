@@ -35,13 +35,17 @@ function calcularPrecioTotalImpuestoDescuento(impuesto,precioNeto,descuento) {
 }
 
 function calcularDescuentoDelPrecioNeto(precioNeto,items) {
-    let descuento = 0;
+    
     let porcentaje = 0;
-    if (items == 1000){
-        porcentaje= 3;
-        descuento = precioNeto*(porcentaje/100);
-        return descuento;
+
+    if (items >= 1000 && items < 3000) {
+        porcentaje = 3;
+    } else if (items >= 3000 && items < 5000) {
+        porcentaje = 5;
     }
+
+    let descuento = precioNeto * (porcentaje / 100);
+    return descuento;
 }
 
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,calcularImpuesto,calcularDescuentoDelPrecioNeto};

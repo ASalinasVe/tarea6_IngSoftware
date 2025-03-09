@@ -93,3 +93,12 @@ describe("Mostrar el precio total con el porcentaje de descuento para igual o ma
         expect(calcularDescuentoDelPrecioNeto(20000,1000)).toBe(600);
     })
 })
+
+describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 3000 items comprados", () => {
+    it ("Deberia mostrar el precio total con el descuento correspondiente a 3000 items.", () => {
+        expect(calcularDescuentoDelPrecioNeto(60000,3000)).toBe(3000);
+    })
+})
+
+
+
