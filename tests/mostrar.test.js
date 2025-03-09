@@ -7,7 +7,7 @@
 // Mostrar el precio total del impuesto según el precio neto y el porcentaje de NV	
 // Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de UT	
 
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto,calcularDescuentoDelPrecioNeto} from "../src/mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -90,34 +90,36 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de UT", ()
 
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 1000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 1000 items.", () => {
-        expect(calcularDescuentoDelPrecioNeto(20000,1000)).toBe(600);
+        expect(calcularDescuentoDelPrecioNeto(20000,3)).toBe(600);
     })
 })
 
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 3000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 3000 items.", () => {
-        expect(calcularDescuentoDelPrecioNeto(60000,3000)).toBe(3000);
+        expect(calcularDescuentoDelPrecioNeto(60000,5)).toBe(3000);
     })
 })
 
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 7000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 7000 items.", () => {
-        expect(calcularDescuentoDelPrecioNeto(140000,7000)).toBe(9800);
+        expect(calcularDescuentoDelPrecioNeto(140000,7)).toBe(9800);
     })
 })
 
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 10000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 10000 items.", () => {
-        expect(calcularDescuentoDelPrecioNeto(200000,10000)).toBe(20000);
+        expect(calcularDescuentoDelPrecioNeto(200000,10)).toBe(20000);
     })
 })
 
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 15000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 15000 items.", () => {
-        expect(calcularDescuentoDelPrecioNeto(600000,30000)).toBe(90000);
+        expect(calcularDescuentoDelPrecioNeto(600000,15)).toBe(90000);
     })
 })
 
-
-
-
+describe("Mostrar el porcentaje de descuento segun los items", () => {
+    it ("Deberia mostrar el porcentaje de descuento correspondiente a los items", () => {
+        expect(mostrarPorcentajeDescuento(10000)).toBe(10);
+    })
+})
