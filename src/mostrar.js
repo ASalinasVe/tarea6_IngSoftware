@@ -30,10 +30,20 @@ function calcularImpuesto(impuesto, precioNeto) {
     return precioNeto * (impuesto / 100);
 }
 
-function calcularPrecioTotalImpuesto(impuesto,precioNeto) {
-    return precioNeto + calcularImpuesto(impuesto,precioNeto);
+function calcularPrecioTotalImpuestoDescuento(impuesto,precioNeto,descuento) {
+    return precioNeto - descuento + calcularImpuesto(impuesto,precioNeto);
 }
 
-export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuesto,calcularImpuesto};
+function calcularDescuentoDelPrecioNeto(precioNeto,items) {
+    let descuento = 0;
+    let porcentaje = 0;
+    if (items == 1000){
+        porcentaje= 3;
+        descuento = precioNeto*(porcentaje/100);
+        return descuento;
+    }
+}
+
+export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,calcularImpuesto,calcularDescuentoDelPrecioNeto};
 
 
