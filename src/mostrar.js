@@ -96,9 +96,18 @@ function mostrarImpuestoyDescuentoDeCategoria(categoria){
     return [impuestoAd,descuentoAd];
 }
 
+function calcularCostoDeEnvio(pesoVolumetrico){
+    let costoDeEnvio;
+    if(pesoVolumetrico <= 10 && pesoVolumetrico >= 0){
+        costoDeEnvio = 0;
+    }
+    return costoDeEnvio;
+}
+
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
-     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
-     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
-    mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria};
+    mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
+    calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
+    mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria,
+    calcularCostoDeEnvio };
 
 
