@@ -130,10 +130,32 @@ describe("Mostrar el precio Total con impuestos y descuento", () => {
 })
 
 //Pruebas para peso volumetrico
-describe("Calcular el costo de envio por peso volumetrico ingresado", () => {
-    it ("Deberia mostrar el costo de encio dependiendo del peso volumetrico ingresado", () => {
-        expect(calcularCostoDeEnvio(81)).toBe(6.5);
+describe("Calcular el costo de envio por peso volumetrico ingresado 0 - 10", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 0 - 10", () => {
+        expect(calcularCostoDeEnvio(0)).toBe(0);
     })
 })
 
+describe("Calcular el costo de envio por peso volumetrico ingresado 11 - 20", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 11 - 20", () => {
+        expect(calcularCostoDeEnvio(11)).toBe(3.5);
+    })
+})
 
+describe("Calcular el costo de envio por peso volumetrico ingresado 21 - 40", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 21 - 40 ", () => {
+        expect(calcularCostoDeEnvio(21)).toBe(5);
+    })
+})
+
+describe("Calcular el costo de envio por peso volumetrico ingresado 41 - 80", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 41 - 80", () => {
+        expect(calcularCostoDeEnvio(41)).toBe(6);
+    })
+})
+
+describe("Calcular el costo de envio por peso volumetrico ingresado 81 - 100", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 81 - 100", () => {
+        expect(calcularCostoDeEnvio(81)).toBe(6.5);
+    })
+})
