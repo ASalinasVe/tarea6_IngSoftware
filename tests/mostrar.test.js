@@ -2,7 +2,7 @@
 import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
      mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, 
      calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento,
-    mostrarCategoriaProducto} from "../src/mostrar.js";
+    mostrarCategoriaProducto,mostrarImpuestoyDescuentoDeCategoria} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -138,4 +138,9 @@ describe("Mostrar la categoria de producto que se selecciona", () => {
     })
 })
 
+describe("Mostrar Impuesto y Descuento Adicionales segun la categoria escogida", () => {
+    it("Deberia mostrar el impuesto y descuento adicioales de la categoria", () => {
+        expect(mostrarImpuestoyDescuentoDeCategoria("Varios")).toEqual([0,0]);
+    })
+})
 

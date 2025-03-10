@@ -60,9 +60,45 @@ function mostrarCategoriaProducto(categoria){
     return categoria;
 }
 
+function mostrarImpuestoyDescuentoDeCategoria(categoria){
+    let impuestoAd = 0;
+    let descuentoAd = 0;
+    switch(categoria){
+        case "Varios":
+            impuestoAd = 0 ;
+            descuentoAd = 0 ;
+        break;
+        case "Alimentos":
+            impuestoAd = 0 ;
+            descuentoAd = 2 ;
+        break;
+        case "Bebidas_Alcoholicas":
+            impuestoAd = 7;
+            descuentoAd = 0 ;
+        break;
+        case "Material_de_escritorio":
+            impuestoAd = 0 ;
+            descuentoAd = 1.5 ;
+        break;
+        case "Muebles":
+            impuestoAd = 3 ;
+            descuentoAd = 0 ;
+        break;
+        case "Electronicos":
+            impuestoAd = 4 ;
+            descuentoAd = 1 ;
+        break;
+        case "Vestimenta":
+            impuestoAd = 2 ;
+            descuentoAd = 0 ;
+        break;
+    }
+    return [impuestoAd,descuentoAd];
+}
+
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
      mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
      calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento,
-    mostrarCategoriaProducto};
+    mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria};
 
 
