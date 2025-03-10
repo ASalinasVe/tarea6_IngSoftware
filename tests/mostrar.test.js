@@ -160,14 +160,14 @@ describe("Calcular el costo de envio por peso volumetrico ingresado 81 - 100", (
     })
 })
 
-describe("Calcular el costo de envio por peso volumetrico ingresado 81 - 100", () => {
-    it ("Deberia mostrar el costo de envio para un peso volumetrico de 81 - 100", () => {
+describe("Calcular el costo de envio por peso volumetrico ingresado 101 - 200", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 101 - 200", () => {
         expect(calcularCostoDeEnvio(101)).toBe(8);
     })
 })
 
-describe("Calcular el costo de envio por peso volumetrico ingresado 81 - 100", () => {
-    it ("Deberia mostrar el costo de envio para un peso volumetrico de 81 - 100", () => {
+describe("Calcular el costo de envio por peso volumetrico ingresado mayor a 200", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico mayor a 200", () => {
         expect(calcularCostoDeEnvio(666)).toBe(9);
     })
 })
