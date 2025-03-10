@@ -97,11 +97,10 @@ function mostrarImpuestoyDescuentoDeCategoria(categoria){
 }
 
 function calcularCostoDeEnvio(pesoVolumetrico){
-    let costoDeEnvio = 0;
-    if(pesoVolumetrico >= 11 && pesoVolumetrico <= 20){
-        costoDeEnvio = 3.5;
-    }
-    return costoDeEnvio;
+    const costoDeEnvio = [
+        {min: 11, max: 20, costo: 3.5}
+    ];
+    return costoDeEnvio.find(t => pesoVolumetrico >= t.min && pesoVolumetrico <= t.max)?.costo || 0;
 }
 
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
