@@ -97,9 +97,9 @@ function mostrarImpuestoyDescuentoDeCategoria(categoria){
 }
 
 function calcularCostoDeEnvio(pesoVolumetrico){
-    let costoDeEnvio;
-    if(pesoVolumetrico <= 10 && pesoVolumetrico >= 0){
-        costoDeEnvio = 0;
+    let costoDeEnvio = 0;
+    if(pesoVolumetrico >= 11 && pesoVolumetrico <= 20){
+        costoDeEnvio = 3.5;
     }
     return costoDeEnvio;
 }
