@@ -1,12 +1,4 @@
 
-
-// Seleccionar estado y mostrar elección	
-// Seleccionar estado y mostrar el porcentaje de impuesto que tiene ese estado	
-// Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de CA	
-// Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de AL	
-// Mostrar el precio total del impuesto según el precio neto y el porcentaje de NV	
-// Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de UT	
-
 import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
@@ -69,24 +61,6 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de UT", ()
 });
 
 
-// Mostrar el precio total con el Porcentaje de descuento que corresponde a 1000	
-// Mostrar el precio total con el Porcentaje de descuento que corresponde a 3000	
-// Mostrar el precio total con el Porcentaje de descuento que corresponde a 7000	
-// Mostrar el precio total con el Porcentaje de descuento que corresponde a 10000	
-// Mostrar el precio total con el Porcentaje de descuento que corresponde a 30000	
-
-// 1000            	3%
-// 3000            	5%
-// 7000	        	7%
-// 10000          	10%
-// 30000          	15%
-	
-// Mostrar el precio total con el valor del impuesto según el precio neto y el porcentaje de TX	
-
-// Mostrar el valor del porcentaje del descuento	
-// Mostrar Precio total = Precio Neto+Impuesto-Descuento	
-// Mostrar los porcentajes con símbolo de porcentaje	
-
 
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 1000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 1000 items.", () => {
@@ -121,5 +95,11 @@ describe("Mostrar el precio total con el porcentaje de descuento para igual o ma
 describe("Mostrar el porcentaje de descuento segun los items", () => {
     it ("Deberia mostrar el porcentaje de descuento correspondiente a los items", () => {
         expect(mostrarPorcentajeDescuento(10000)).toBe(10);
+    })
+})
+
+describe("Mostrar el precio Total con impuestos y descuento", () => {
+    it ("Deberia mostrar el precio Total con impuesto y descuetos", () => {
+        expect(calcularPrecioTotalImpuestoDescuento(8.25,20000,600)).toBe(21050);
     })
 })
