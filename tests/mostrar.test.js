@@ -132,7 +132,7 @@ describe("Mostrar el precio Total con impuestos y descuento", () => {
 //Pruebas para peso volumetrico
 describe("Calcular el costo de envio por peso volumetrico ingresado", () => {
     it ("Deberia mostrar el costo de encio dependiendo del peso volumetrico ingresado", () => {
-        expect(calcularCostoDeEnvio(11)).toBe(3.5);
+        expect(calcularCostoDeEnvio(21)).toBe(5);
     })
 })
 
