@@ -100,7 +100,7 @@ function calcularCostoDeEnvio(pesoVolumetrico){
     const costoDeEnvio = [
         {min: 11, max: 20, costo: 3.5},
         {min: 21, max: 40, costo: 5},
-        {min: 41, max: 80, costo: 6},
+        {min: 41, max: 80, costo: 6 },
     ];
     return costoDeEnvio.find(t => pesoVolumetrico >= t.min && pesoVolumetrico <= t.max)?.costo || 0;
 }
