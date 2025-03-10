@@ -27,11 +27,11 @@ function mostrarImpuestoEstado(estado){
 }
 
 function calcularImpuesto(impuesto, precioNeto) {
-    return precioNeto * (impuesto / 100);
+    return precioNeto * (impuesto/ 100);
 }
 
-function calcularPrecioTotalImpuestoDescuento(impuesto,precioNeto,descuento) {
-    return precioNeto - descuento + calcularImpuesto(impuesto,precioNeto);
+function calcularPrecioTotalImpuestoDescuento(impuesto,precioNeto,descuento,impuestoAd) {
+    return precioNeto - descuento + calcularImpuesto((impuesto+impuestoAd),precioNeto);
 }
 
 function mostrarPorcentajeDescuento(items) {
@@ -50,9 +50,9 @@ function mostrarPorcentajeDescuento(items) {
     return porcentaje;
 }
 
-function calcularDescuentoDelPrecioNeto(precioNeto,porcentaje) {
-    let descuento = precioNeto * (porcentaje / 100);
-    descuento = Math.round(descuento);
+function calcularDescuento(precioNeto,porcentaje,descuentoAd) {
+    let descuento = precioNeto * ((porcentaje + descuentoAd) / 100);
+   // descuento = Math.round(descuento);
     return descuento;
 }
 
@@ -98,7 +98,7 @@ function mostrarImpuestoyDescuentoDeCategoria(categoria){
 
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
      mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
-     calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento,
+     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria};
 
 
