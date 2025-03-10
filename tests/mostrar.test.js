@@ -1,5 +1,8 @@
 
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento} from "../src/mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
+     mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, 
+     calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento,
+    mostrarCategoriaProducto} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -19,6 +22,8 @@ describe ("Mostar el precio neto", () => {
     });
 });
 
+
+//Pruebas de Estados
 describe ("Mostrar el Estado seleccionado", () => {
     it("Deberia mostrar el estado, que se ingresa", () => {
         expect(mostrarEstadoSeleccionado("CA")).toBe("CA");
@@ -32,6 +37,8 @@ describe("Mostrar el porcentaje de impuesto que tiene del estado seleccionado", 
 
 });
 
+
+//Pruebas de Impuestos segun el Estado
 describe("Calcular y Mostrar el precio total con el valor de impuesto de CA", () => {
     it("Deberia calcular y mostrar el precio total con el valor de impuesto agregado de California", () => {
         expect (calcularImpuesto(8.25,60)).toBe(4.95);
@@ -61,7 +68,7 @@ describe("Calcular y Mostrar el precio total con el valor de impuesto de UT", ()
 });
 
 
-
+//Pruebas de descuentos por items
 describe("Mostrar el precio total con el porcentaje de descuento para igual o mas de 1000 items comprados", () => {
     it ("Deberia mostrar el precio total con el descuento correspondiente a 1000 items.", () => {
         expect(calcularDescuentoDelPrecioNeto(20000,3)).toBe(600);
@@ -92,6 +99,7 @@ describe("Mostrar el precio total con el porcentaje de descuento para igual o ma
     })
 })
 
+//Pruebas de mostrar el monto de descuento y precio Total
 describe("Mostrar el porcentaje de descuento segun los items", () => {
     it ("Deberia mostrar el porcentaje de descuento correspondiente a los items", () => {
         expect(mostrarPorcentajeDescuento(10000)).toBe(10);
@@ -103,3 +111,31 @@ describe("Mostrar el precio Total con impuestos y descuento", () => {
         expect(calcularPrecioTotalImpuestoDescuento(8.25,20000,600)).toBe(21050);
     })
 })
+
+// - El usuario tendrá también que elegir una categoría de producto.
+//  Se debe elegir la categoría de una lista de categorías.
+//  La categoría por defecto es ‘Varios’.  
+// De acuerdo a estas categorías se tendrá algunas variaciones en descuentos e impuestos:
+
+// Categoria de producto     Impuesto adicional        Descuento adicional por categoria
+// Alimentos			          0%				                2%
+// Bebidas alcohólicas		      7%				                0%
+// Material de escritorio		  0%				               1.5%
+// Muebles		                  3%				                0%
+// Electrónicos			          4%				                1%
+// Vestimenta			          2%				                0%
+// Varios				          0%			                	0%
+
+// *Se debe tomar en cuenta que la tabla anterior toma en cuenta montos adicionales,
+//  es decir en caso de que un producto tenga 0% adicional, 
+// quiere decir que no se adiciona nada a lo que tenía antes.
+
+
+//Pruebas para categorias elegidas
+describe("Mostrar la categoria de producto que se selecciona", () => {
+    it("Deberia mostrar la categoria que elige el usuario segun su producto", () => {
+        expect(mostrarCategoriaProducto("Varios")).toBe("Varios");
+    })
+})
+
+

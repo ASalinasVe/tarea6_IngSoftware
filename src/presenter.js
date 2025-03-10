@@ -20,7 +20,7 @@ form.addEventListener("submit", (event) => {
   const precioItem = parseFloat(precio.value);
 
   const precioTotal =  mostrarPrecioNeto(cantItems, precioItem)
-  div.innerHTML = "<p> Precio Neto: " +   precioTotal  + "</p>"
+  div.innerHTML = "<p> Precio Neto: " +   precioTotal  + "$ </p>"
 
   const estadoSeleccionado= select.value;
   divEstado.innerHTML = "<p> Estado Seleccionado: " + estadoSeleccionado + "</p>";

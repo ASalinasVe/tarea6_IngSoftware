@@ -51,12 +51,18 @@ function mostrarPorcentajeDescuento(items) {
 }
 
 function calcularDescuentoDelPrecioNeto(precioNeto,porcentaje) {
-
     let descuento = precioNeto * (porcentaje / 100);
     descuento = Math.round(descuento);
     return descuento;
 }
 
-export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento};
+function mostrarCategoriaProducto(categoria){
+    return categoria;
+}
+
+export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
+     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
+     calcularImpuesto,calcularDescuentoDelPrecioNeto,mostrarPorcentajeDescuento,
+    mostrarCategoriaProducto};
 
 
