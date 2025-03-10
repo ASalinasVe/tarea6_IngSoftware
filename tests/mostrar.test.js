@@ -165,3 +165,9 @@ describe("Calcular el costo de envio por peso volumetrico ingresado 81 - 100", (
         expect(calcularCostoDeEnvio(101)).toBe(8);
     })
 })
+
+describe("Calcular el costo de envio por peso volumetrico ingresado 81 - 100", () => {
+    it ("Deberia mostrar el costo de envio para un peso volumetrico de 81 - 100", () => {
+        expect(calcularCostoDeEnvio(666)).toBe(9);
+    })
+})
