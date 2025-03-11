@@ -120,7 +120,10 @@ function calcularPrecioTotalMasCostoDeEnvio(pesoVolumetrico, cantidad, precioUni
 }
 
 function calcularTarifaTipoDeCliente(tipoDeCliente){
-    return 0;
+    const descuentos = [
+        {tipo : "Recurrente",  descuento: 0.5}
+    ];
+    return descuentos.find(t => tipoDeCliente == t.tipo)?.descuento || 0;
 }
 
 
