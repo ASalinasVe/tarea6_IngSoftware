@@ -223,5 +223,8 @@ describe("Descuento en costo de envio de un cliente Espacial", () => {
 describe("Calcular costo de envio para el tipo de cliente que se tiene, recibe como el costo de envio y el porcentaje de descuento", () => {
     it ("Deberia devolver el costo de envio con el descuento por tipo de cliente", () => {
         expect(calcularCostoEnvioTipoDeCliente(45,0)).toBe(45);
+        expect(calcularCostoEnvioTipoDeCliente(150,0.5)).toBe(149.25);
+        expect(calcularCostoEnvioTipoDeCliente(80,1)).toBe(79.2);
+        expect(calcularCostoEnvioTipoDeCliente(104,1.5)).toBe(102.44);
     })
 })
