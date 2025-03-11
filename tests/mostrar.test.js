@@ -4,7 +4,7 @@ import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto,mostrarImpuestoyDescuentoDeCategoria,
     calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad, calcularPrecioTotalMasCostoDeEnvio,
-    calcularTarifaTipoDeCliente} from "../src/mostrar.js";
+    calcularTarifaTipoDeCliente, calcularCostoEnvioTipoDeCliente} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {

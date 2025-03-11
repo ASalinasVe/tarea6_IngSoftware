@@ -128,12 +128,17 @@ function calcularTarifaTipoDeCliente(tipoDeCliente){
     return descuentos.find(t => tipoDeCliente == t.tipo)?.descuento || 0;
 }
 
+function calcularCostoEnvioTipoDeCliente(costoDeEnvio, porcentajeDeDescuentoTipoCliente){
+    const descuentoDecimal = porcentajeDeDescuentoTipoCliente / 100;
+    return costoDeEnvio - (costoDeEnvio*descuentoDecimal);
+}
+
 
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria,
     calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad, calcularPrecioTotalMasCostoDeEnvio,
-    calcularTarifaTipoDeCliente};
+    calcularTarifaTipoDeCliente, calcularCostoEnvioTipoDeCliente};
 
 
