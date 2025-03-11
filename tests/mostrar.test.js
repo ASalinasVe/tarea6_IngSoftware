@@ -208,13 +208,20 @@ describe("Descuento en costo de envio de un cliente Recurrente", () => {
 })
 
 describe("Descuento en costo de envio de un cliente Antiguo Recurrente", () => {
-    it ("Deberia devolver un descuento de 0% para un cliente Antiguo recurrente", () => {
+    it ("Deberia devolver un descuento de 0.5% para un cliente Antiguo recurrente", () => {
         expect(calcularTarifaTipoDeCliente("Antiguo Recurrente")).toBe(1);
     })
 })
 
 describe("Descuento en costo de envio de un cliente Espacial", () => {
-    it ("Deberia devolver un descuento de 0% para un cliente Especial", () => {
+    it ("Deberia devolver un descuento de 1.5% para un cliente Especial", () => {
         expect(calcularTarifaTipoDeCliente("Especial")).toBe(1.5);
+    })
+})
+
+//Calcular Costo de envio con descuento por tipo de cliente
+describe("Calcular costo de envio para el tipo de cliente que se tiene, recibe como el costo de envio y el porcentaje de descuento", () => {
+    it ("Deberia devolver el costo de envio con el descuento por tipo de cliente", () => {
+        expect(calcularCostoEnvioTipoDeCliente(45,0)).toBe(45);
     })
 })
