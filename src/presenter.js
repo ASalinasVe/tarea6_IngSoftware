@@ -1,5 +1,5 @@
 
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto, calcularDescuento, mostrarPorcentajeDescuento, mostrarImpuestoyDescuentoDeCategoria} from "./mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto, calcularDescuento, mostrarPorcentajeDescuento, mostrarImpuestoyDescuentoDeCategoria, calcularPrecioTotalMasCostoDeEnvio} from "./mostrar.js";
 
 const cant = document.querySelector("#cant-items");
 const precio = document.querySelector("#precio-item")
@@ -11,8 +11,8 @@ const divImpuesto = document.querySelector("#impuesto-correspondiente");
 const divImpuestoCalculado = document.querySelector("#impuesto-calculado");
 const divPrecioNetoImpuesto = document.querySelector("#resultado-precioTotalImpuesto");
 const divDescuentosItems = document.querySelector("#descuento-items");
-const selectCategoria = document.querySelector("#select-categoria")
-
+const selectCategoria = document.querySelector("#select-categoria");
+const pesoVolumetrico = document.querySelector("#peso-volumetrico");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -41,8 +41,9 @@ form.addEventListener("submit", (event) => {
   const impuestoCalculado = calcularImpuesto((impuestoCorrespondiente+impuestoAd),precioTotal);
   divImpuestoCalculado.innerHTML = "<p>"+ impuestoCalculado + "$ </p>";
 
-  const precioNetoImpuesto = calcularPrecioTotalImpuestoDescuento(impuestoCorrespondiente,precioTotal,precioDescuento,impuestoAd);
-  divPrecioNetoImpuesto.innerHTML = "<p>" + precioNetoImpuesto + "$ </p>";
+  const pesoVol = parseInt(pesoVolumetrico.value);
+  const precioCostoEnvio = calcularPrecioTotalMasCostoDeEnvio(pesoVol, cantItems, precioItem, impuestoCalculado, precioDescuento);
+  divPrecioNetoImpuesto.innerHTML = "<p>" + precioCostoEnvio + "$ </p>";
 
 
 });
