@@ -192,3 +192,10 @@ describe("Calcular el precio total con el costo de envio", () => {
         expect(calcularPrecioTotalMasCostoDeEnvio(25, 1000, 70, 5775, 2100)).toBe(78675);
     })
 })
+
+//pruebas de tipo de clientes
+describe("Descuento en costo de envio de un cliente Normal", () => {
+    it ("Deberia devolver un descuento de 0% para un cliente normal", () => {
+        expect(calcularTarifaTipoDeCliente("Normal")).toBe(0);
+    })
+})
