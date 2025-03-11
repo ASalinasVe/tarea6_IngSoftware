@@ -115,11 +115,8 @@ function calcularCostoDeEnvioConCantidad(pesoVolumetrico, cantidadDeProducto){
 
 function calcularPrecioTotalMasCostoDeEnvio(pesoVolumetrico, cantidad, precioUnitario, impuesto, descuento) {
     const precioNeto = cantidad * precioUnitario;
-    const impuestoCalculado = (impuesto / 100) * precioNeto;
-    const descuentoCalculado = (descuento / 100) * precioNeto;
     const costoEnvio = calcularCostoDeEnvioConCantidad(pesoVolumetrico, cantidad);
-    
-    return precioNeto + impuestoCalculado - descuentoCalculado + costoEnvio;
+    return precioNeto + impuesto - descuento + costoEnvio;
 }
 
 
