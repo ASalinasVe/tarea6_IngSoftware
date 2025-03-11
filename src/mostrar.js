@@ -119,11 +119,16 @@ function calcularPrecioTotalMasCostoDeEnvio(pesoVolumetrico, cantidad, precioUni
     return precioNeto + impuesto - descuento + costoEnvio;
 }
 
+function calcularTarifaTipoDeCliente(tipoDeCliente){
+    return 0;
+}
+
 
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria,
-    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad, calcularPrecioTotalMasCostoDeEnvio};
+    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad, calcularPrecioTotalMasCostoDeEnvio,
+    calcularTarifaTipoDeCliente};
 
 
