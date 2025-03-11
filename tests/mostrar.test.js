@@ -3,7 +3,7 @@ import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, 
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto,mostrarImpuestoyDescuentoDeCategoria,
-    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad} from "../src/mostrar.js";
+    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad, calcularPrecioTotalMasCostoDeEnvio} from "../src/mostrar.js";
 
 describe ("Mostrar Cantidad de Items", () => {
     it("Debería mostrar la cantidad de items ingresada", () => {
@@ -189,5 +189,6 @@ describe("Calcular el costo de envio por peso volumetrico y cantidad ingresada",
 describe("Calcular el precio total con el costo de envio", () => {
     it ("Deberia devolver el precio total dependiendo del costo de envio", () => {
         expect(calcularPrecioTotalMasCostoDeEnvio(15, 2, 50, 10, 5)).toBe(112);
+        expect(calcularPrecioTotalMasCostoDeEnvio(25, 1000, 70, 78.75, 75.775)).toBe(77082.5);
     })
 })

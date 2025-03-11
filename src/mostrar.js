@@ -113,10 +113,20 @@ function calcularCostoDeEnvioConCantidad(pesoVolumetrico, cantidadDeProducto){
     return costoPorUnidad * cantidadDeProducto;
 }
 
+function calcularPrecioTotalMasCostoDeEnvio(pesoVolumetrico, cantidad, precioUnitario, impuesto, descuento) {
+    const precioNeto = cantidad * precioUnitario;
+    const impuestoCalculado = (impuesto / 100) * precioNeto;
+    const descuentoCalculado = (descuento / 100) * precioNeto;
+    const costoEnvio = calcularCostoDeEnvioConCantidad(pesoVolumetrico, cantidad);
+    
+    return precioNeto + impuestoCalculado - descuentoCalculado + costoEnvio;
+}
+
+
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria,
-    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad };
+    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad, calcularPrecioTotalMasCostoDeEnvio};
 
 
