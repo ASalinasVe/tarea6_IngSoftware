@@ -178,9 +178,9 @@ describe("Calcular el costo de envio por peso volumetrico y cantidad ingresada",
         expect(calcularCostoDeEnvioConCantidad(15,2)).toBe(7);
         expect(calcularCostoDeEnvioConCantidad(30,4)).toBe(20);
         expect(calcularCostoDeEnvioConCantidad(50,3)).toBe(18);
-        expect(calcularCostoDeEnvioConCantidad(90,1)).toBe(6.5);
+        expect(calcularCostoDeEnvioConCantidad(90,2)).toBe(13);
         expect(calcularCostoDeEnvioConCantidad(150,2)).toBe(16);
-        expect(calcularCostoDeEnvioConCantidad(150,2)).toBe(45);
+        expect(calcularCostoDeEnvioConCantidad(250,5)).toBe(45);
     })
 })
 

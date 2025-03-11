@@ -109,7 +109,7 @@ function calcularCostoDeEnvio(pesoVolumetrico){
 }
 
 function calcularCostoDeEnvioConCantidad(pesoVolumetrico, cantidadDeProducto){
-    let costoPorUnidad = 0;
+    let costoPorUnidad = calcularCostoDeEnvio(pesoVolumetrico);
     return costoPorUnidad * cantidadDeProducto;
 }
 
@@ -117,6 +117,6 @@ export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria,
-    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad};
+    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad };
 
 
