@@ -186,9 +186,8 @@ describe("Calcular el costo de envio por peso volumetrico y cantidad ingresada",
 
 
 //Prueba para costo de envio
-/*describe("Calcular el precio total con el costo de envio", () => {
+describe("Calcular el precio total con el costo de envio", () => {
     it ("Deberia devolver el precio total dependiendo del costo de envio", () => {
-        expect(calcularPrecioTotalMasCostoDeEnvio(5,1000)).toBe();
+        expect(calcularPrecioTotalMasCostoDeEnvio(15, 2, 50, 10, 5)).toBe(112);
     })
 })
-*/
