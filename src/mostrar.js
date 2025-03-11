@@ -1,7 +1,7 @@
 function mostrarCantItems(cantItems) {
     return cantItems;
-  }
-  
+}
+
 function mostrarPrecioItem(precioItem){
     return precioItem;
 } 
@@ -108,10 +108,15 @@ function calcularCostoDeEnvio(pesoVolumetrico){
     return costoDeEnvio.find(t => pesoVolumetrico >= t.min && pesoVolumetrico <= t.max)?.costo || 0;
 }
 
+function calcularCostoDeEnvioConCantidad(pesoVolumetrico, cantidadDeProducto){
+    let costoPorUnidad = 0;
+    return costoPorUnidad * cantidadDeProducto;
+}
+
 export  {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto,
     mostrarEstadoSeleccionado, mostrarImpuestoEstado,calcularPrecioTotalImpuestoDescuento,
     calcularImpuesto,calcularDescuento,mostrarPorcentajeDescuento,
     mostrarCategoriaProducto, mostrarImpuestoyDescuentoDeCategoria,
-    calcularCostoDeEnvio };
+    calcularCostoDeEnvio, calcularCostoDeEnvioConCantidad};
 
 
