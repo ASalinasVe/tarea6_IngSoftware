@@ -206,3 +206,9 @@ describe("Descuento en costo de envio de un cliente Recurrente", () => {
         expect(calcularTarifaTipoDeCliente("Recurrente")).toBe(0.5);
     })
 })
+
+describe("Descuento en costo de envio de un cliente Antiguo Recurrente", () => {
+    it ("Deberia devolver un descuento de 0% para un cliente Antiguo recurrente", () => {
+        expect(calcularTarifaTipoDeCliente("Antiguo Recurrente")).toBe(1);
+    })
+})
