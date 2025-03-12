@@ -1,5 +1,8 @@
 
-import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto, calcularDescuento, mostrarPorcentajeDescuento, mostrarImpuestoyDescuentoDeCategoria, calcularPrecioTotalMasCostoDeEnvio, calcularCostoDeEnvioConCantidad} from "./mostrar.js";
+import {mostrarCantItems, mostrarPrecioItem, mostrarPrecioNeto, mostrarEstadoSeleccionado, 
+  mostrarImpuestoEstado, calcularPrecioTotalImpuestoDescuento, calcularImpuesto, calcularDescuento,
+  mostrarPorcentajeDescuento, mostrarImpuestoyDescuentoDeCategoria, calcularPrecioTotalMasCostoDeEnvio,
+  calcularCostoDeEnvioConCantidad, calcularTarifaTipoDeCliente,calcularCostoEnvioTipoDeCliente} from "./mostrar.js";
 
 const cant = document.querySelector("#cant-items");
 const precio = document.querySelector("#precio-item")
@@ -14,6 +17,8 @@ const divDescuentosItems = document.querySelector("#descuento-items");
 const selectCategoria = document.querySelector("#select-categoria");
 const pesoVolumetrico = document.querySelector("#peso-volumetrico");
 const divCostoEnvio = document.querySelector("#costo-envio-calculado");
+const tipoClienteSeleccionadoo = document.querySelector("#tipo-cliente")
+const divDescuentoCostoEnvio = document.querySelector("#descuento-costo-envio");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -45,8 +50,11 @@ form.addEventListener("submit", (event) => {
   const pesoVol = parseInt(pesoVolumetrico.value);
   divCostoEnvio.innerHTML = "<p>" + calcularCostoDeEnvioConCantidad(pesoVol,cantItems) + "</p>";
 
+  const tipoClienteSeleccionado = tipoClienteSeleccionadoo.value;
+  const porcentajeDescuentoTipoClient = calcularTarifaTipoDeCliente(tipoClienteSeleccionado);
   const precioCostoEnvio = calcularPrecioTotalMasCostoDeEnvio(pesoVol, cantItems, precioItem, impuestoCalculado, precioDescuento);
-  divPrecioNetoImpuesto.innerHTML = "<p>" + precioCostoEnvio + "$ </p>";
 
-
+  divCostoEnvio.innerHTML = "<p>" + calcularCostoDeEnvioConCantidad(pesoVol, cantItems) + "</p>";
+  divDescuentoCostoEnvio.innerHTML = "<p>"+ calcularTarifaTipoDeCliente(tipoClienteSeleccionado) +"%</p>";
+  divPrecioNetoImpuesto.innerHTML = "<p>" + calcularCostoEnvioTipoDeCliente(precioCostoEnvio,porcentajeDescuentoTipoClient) + "$</p>";
 });

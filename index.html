@@ -42,6 +42,15 @@
       <label for="peso-volumetrico">Peso volumetrico del producto: </label>
       <input type="number" name="" id="peso-volumetrico"><br>
 
+      <label for="tipo-cliente-select">Tipo de cliente: </label>
+      <select id="tipo-cliente">
+        <option value="Normal">NORMAL</option>
+        <option value="Recurrente">RECURRENTE</option>
+        <option value="Antiguo Recurrente">ANTIGUO RECURRENTE</option>
+        <option value="Especial">ESSPECIAL</option>
+      </select>
+      <div id="tipo-cliente-seleccionado"></div>
+
       <br>
       <label for="impuesto-de-estado">Impuestos: </label>
       <div id="impuesto-correspondiente"></div>
@@ -55,12 +64,15 @@
       <div id="descuento-items"></div>
 
       <br>
-      <label for="costo-envio">Costo de envio  => </label>
+      <label for="costo-envio">Costo de envio: </label>
       <div id="costo-envio-calculado"></div>
       <br>
 
+      <label for="costo-envio-descuento">Porcentaje de descuento por tipo de cliente: </label>
+      <div id="descuento-costo-envio"></div>
       <br>
-      <label for="preciototal-impuesto">Precio Total (Impuesto, Descuentos y costo de envio): </label>
+
+      <label for="preciototal-impuesto">Precio Total (Impuesto, Descuentos y costo de envio con descuento por tipo de cliente): </label>
       <div id="resultado-precioTotalImpuesto"></div>
       <br>
     
